@@ -5,3 +5,7 @@ function getComputerChoice() {
     if (randomNumber === 1) return "paper";
     return "scissors";
 }
+
+function getHumanChoice() {
+    return prompt("Rock, Paper or Scissors?").toLowerCase();
+}
