@@ -6,7 +6,7 @@ function getComputerChoice() {
 
     if (randomNumber === 0) return "rock";
     if (randomNumber === 1) return "paper";
-    return "scissors";
+    if (randomNumber === 2) return "scissors";
 }
 
 function getHumanChoice() {
