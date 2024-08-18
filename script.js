@@ -6,10 +6,6 @@ function getComputerChoice() {
     if (randomNumber === 2) return "scissors";
 }
 
-function getHumanChoice() {
-    return prompt("Rock, Paper or Scissors?").toLowerCase();
-}
-
 function playRound(humanChoice, computerChoice) {
     if (humanChoice === "rock" && computerChoice === "scissors") {
         console.log("You win! Rock beats Scissors");
