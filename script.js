@@ -1,3 +1,5 @@
+const gameDisplay = document.querySelector("#game-display");
+
 function getComputerChoice() {
     const randomNumber = Math.floor(Math.random() * 3);
 
@@ -8,15 +10,15 @@ function getComputerChoice() {
 
 function playRound(humanChoice, computerChoice) {
     if (humanChoice === "rock" && computerChoice === "scissors") {
-        console.log("You win! Rock beats Scissors");
+        gameDisplay.textContent = "You win! Rock beats Scissors";
     } else if (humanChoice === "paper" && computerChoice === "rock") {
-        console.log("You win! Paper beats Rock");
+        gameDisplay.textContent = "You win! Paper beats Rock";
     } else if (humanChoice === "scissors" && computerChoice === "paper") {
-        console.log("You win! Scissors beats Paper");
+        gameDisplay.textContent = "You win! Scissors beats Paper";
     } else if (humanChoice === computerChoice) {
-        console.log("It's a tie!");
+        gameDisplay.textContent = "It's a tie!";
     } else {
-        console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
+        gameDisplay.textContent = `You lose! ${computerChoice} beats ${humanChoice}`;
     }
 }
 
