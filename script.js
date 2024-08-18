@@ -20,6 +20,11 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
-const result = playRound(humanSelection, computerSelection);
+const gameButtons = document.querySelectorAll("button");
+gameButtons.forEach(gameButton => {
+    gameButton.addEventListener("click", () => {
+        const humanChoice = gameButton.textContent.toLowerCase();
+        const computerChoice = getComputerChoice();
+        playRound(humanChoice, computerChoice);
+    })
+});
