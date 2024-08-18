@@ -1,4 +1,8 @@
-const gameDisplay = document.querySelector("#game-display");
+let humanScore = 0;
+let computerScore = 0;
+const gameDisplayRound = document.querySelector("#game-display-round");
+const gameDisplayScore = document.querySelector("#game-display-score");
+
 
 function getComputerChoice() {
     const randomNumber = Math.floor(Math.random() * 3);
@@ -10,16 +14,21 @@ function getComputerChoice() {
 
 function playRound(humanChoice, computerChoice) {
     if (humanChoice === "rock" && computerChoice === "scissors") {
-        gameDisplay.textContent = "You win! Rock beats Scissors";
+        gameDisplayRound.textContent = "You win! Rock beats Scissors";
+        humanScore++;
     } else if (humanChoice === "paper" && computerChoice === "rock") {
-        gameDisplay.textContent = "You win! Paper beats Rock";
+        gameDisplayRound.textContent = "You win! Paper beats Rock";
+        humanScore++;
     } else if (humanChoice === "scissors" && computerChoice === "paper") {
-        gameDisplay.textContent = "You win! Scissors beats Paper";
+        gameDisplayRound.textContent = "You win! Scissors beats Paper";
+        humanScore++;
     } else if (humanChoice === computerChoice) {
-        gameDisplay.textContent = "It's a tie!";
+        gameDisplayRound.textContent = "It's a tie!";
     } else {
-        gameDisplay.textContent = `You lose! ${computerChoice} beats ${humanChoice}`;
+        gameDisplayRound.textContent = `You lose! ${computerChoice} beats ${humanChoice}`;
+        computerScore++;
     }
+    gameDisplayScore.textContent = `Computer: ${computerScore} | Human: ${humanScore}`;
 }
 
 const gameButtons = document.querySelectorAll("button");
